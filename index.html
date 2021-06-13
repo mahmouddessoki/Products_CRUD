@@ -30,9 +30,13 @@
             <textarea type="text" class="form-control" id="pDesc"></textarea>
         </div>
 
-        <button class="btn btn-primary" onclick="addProduct()">Add Product</button>
+        <button class="btn btn-primary" onclick="addProduct()">Add_Product</button>
+        <button value="" disabled class="btn btn-info edit" onclick="Confirm()">Confirm_Edit</button>
+        <button class="btn btn-warning" onclick="Reset()">Reset</button>
+
         </div>
-        <p class="alert alert-danger mx-auto w-50">Please Enter Name Cattegory and price of the price</p>
+        <p class="alert alert-danger mx-auto w-50 mt-5">Please Enter Name,Category and price of the product</p>
+    
         <input type="text" onkeyup="searchProduct(this.value)" class="form-control w-75 mx-auto my-5" placeholder="Real Time Search about product">
 
         <div class="container">
@@ -44,6 +48,7 @@
                     <th >Category</th>
                     <th class="hide">Description</th>
                     <th>DEL</th>
+                    <th>EDIT</th>
                 </thead>
 
                 <tbody id="myTableBody">

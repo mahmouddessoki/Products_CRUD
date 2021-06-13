@@ -55,7 +55,8 @@
       {
           haSalah +='<tr>  <td>'+i+`</td> <td>`+myStore[i].productName+`</td> <td>`+
           myStore[i].productPrice+`</td> <td>`+myStore[i].productCat+'</td> <td class="hide">'+
-          myStore[i].productDesc+`</td> <td> <button class="btn btn-danger" onclick="deleteProduct(`+i+`)"> Delete</button>
+          myStore[i].productDesc+`</td> <td> <button class="btn btn-danger" onclick="deleteProduct(`+i+`)"> Delete</button>`
+          +`</td> <td> <button class="btn btn-primary" onclick="editProduct(`+i+`)"> Edit</button>`+`
           </td></tr> `
       }
 
@@ -68,6 +69,40 @@ function deleteProduct(index)
     displayProduct();
     localStorage.setItem("productStorage",JSON.stringify(myStore));
 }
+function editProduct(index)
+{
+    pName.value = myStore[index].productName
+    pPrice.value = myStore[index].productPrice
+    pCat.value = myStore[index].productCat
+    pDesc.value = myStore[index].productDesc
+    displayProduct();
+
+    document.querySelector(".edit").removeAttribute("disabled");
+    $(".edit").val(index)
+    
+
+}
+function Reset()
+{
+    pName.value = ""
+    pPrice.value = ""
+    pCat.value = ""
+    pDesc.value = ""
+    displayProduct();
+
+    $(".edit").attr("disabled","disabled")
+}
+
+function Confirm(){
+    index = $(".edit").val();
+     myStore[index].productName = pName.value
+    myStore[index].productPrice = pPrice.value
+    myStore[index].productCat   = pCat.value
+     myStore[index].productDesc = pDesc.value
+    displayProduct();
+    
+}
+
 
 function searchProduct(userWord)
 {
