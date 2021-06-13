@@ -1,0 +1,20 @@
+.alert{
+    display: none;
+    width: 90%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width : 767px)
+{
+    .hide{
+        display: none;
+    }
+}
+
