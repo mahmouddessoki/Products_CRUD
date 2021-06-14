@@ -10,6 +10,9 @@ body{
     margin-top: 50px;
     background-color: rgba(0,0,0,0.3);
 }
+h1{font-size: 9rem;
+    font-weight: 900;
+    color: blue;}
 
 @media screen and (max-width : 767px)
 {
